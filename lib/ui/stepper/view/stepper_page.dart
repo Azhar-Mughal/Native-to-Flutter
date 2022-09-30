@@ -61,15 +61,16 @@ class _StepperPageState extends State<StepperPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Stepper Page"),
+        title: const Text("Custom Stepper"),
         automaticallyImplyLeading: false,
+        backgroundColor: Colors.cyan,
         elevation: 0,
       ),
       body: showLoading
           ? const SizedBox.shrink()
           : StepperView(
               mIndex: _index,
-              mOnCancelPressed: () {
+              mOnBackPressed: () {
                 if (_index > 0) {
                   setState(() {
                     _index -= 1;
